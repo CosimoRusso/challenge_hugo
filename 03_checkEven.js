@@ -1,4 +1,5 @@
 function checkEven(n){
+    // if the last bit is 1, for sure the number is odd
     return !(n & 1);
 
 }
