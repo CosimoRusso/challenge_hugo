@@ -6,12 +6,29 @@ function fibonacci_recursive(n){
     }
 }
 
+function fibonacci_dynamic(n){
+    const memoization = {0: 0, 1: 1}
+    const sub_fib = (k) => {
+        if (k in Object.keys(memoization)) {
+            return memoization[k]
+        }
+        const result = sub_fib(k-1) + sub_fib(k-2);
+        memoization[k] = result
+        return result;
+    }
+    return sub_fib(n);
+}
+
 function test_fib(){
     results = [0, 1, 1, 2, 3, 5, 8, 13, 21]
     for (let i=0; i<9; i++){
-        f = fibonacci_recursive(i)
-        if (f !== results[i]){
-            throw `ERROR for input ${i}: expected ${results[i]} but got ${f}`;
+        rec = fibonacci_recursive(i)
+        dyn = fibonacci_dynamic(i)
+        if (rec !== results[i]){
+            throw `ERROR for recursive input ${i}: expected ${results[i]} but got ${rec}`;
+        }
+        if (dyn !== results[i]){
+            throw `ERROR for dynamic input ${i}: expected ${results[i]} but got ${dyn}`;
         }
     }
     console.log("Done, no errors")
