@@ -20,10 +20,10 @@ function fibonacci_dynamic(n){
 }
 
 function test_fib(){
-    results = [0, 1, 1, 2, 3, 5, 8, 13, 21]
+    const results = [0, 1, 1, 2, 3, 5, 8, 13, 21]
     for (let i=0; i<9; i++){
-        rec = fibonacci_recursive(i)
-        dyn = fibonacci_dynamic(i)
+        let rec = fibonacci_recursive(i)
+        let dyn = fibonacci_dynamic(i)
         if (rec !== results[i]){
             throw `ERROR for recursive input ${i}: expected ${results[i]} but got ${rec}`;
         }

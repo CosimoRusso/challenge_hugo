@@ -17,4 +17,4 @@ que considere necesarios.
 5. The set of pairs <name, birth date> has cardinality small enough to fit inside the RAM of the server.
 
 ## Solution
-Keep in memory the list inside an array that is returned. Every T seconds, an API call to the external service updates the list in memory.
+Keep in memory the list inside an array that is returned on each API call. Every T seconds, an API call to the external service updates the list in memory.

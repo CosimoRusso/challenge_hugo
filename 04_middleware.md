@@ -27,3 +27,5 @@ module.exports = (req, res, next) => {
   next();
 };
 ```
+
+The code above comes from [Papyro](https://github.com/CosimoRusso/papyro), a university project built by me and a collegue from Politecnico for the course _information technology for the web_.
